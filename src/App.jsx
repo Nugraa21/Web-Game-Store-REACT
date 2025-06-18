@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import "./index.css";
 import Home from "./Pages/Home.jsx";
-import About from "./Pages/About.jsx";
+import Game from "./Pages/Game.jsx";
 import AnimatedBackground from "./components/Background.jsx";
 import Navbar from "./components/Navbar.jsx";
 import Portofolio from "./Pages/Portofolio.jsx"
@@ -31,7 +31,7 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
           <main className="flex flex-col">
             {/* Memasukan Componentes*/}
             <Home />
-            <About />
+            <Game />
             <Portofolio />
             <ContactPage />
           </main>
@@ -108,7 +108,7 @@ function App() {
             path="/"
             element={<LandingPage showWelcome={showWelcome} setShowWelcome={setShowWelcome} />}
           />
-          {/* <Route path="/about" element={<About />} /> */}
+          {/* <Route path="/about" element={<Game />} /> */}
           <Route path="/contact" element={<ContactPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

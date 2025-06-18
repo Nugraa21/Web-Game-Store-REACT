@@ -4,9 +4,9 @@ import { Link, useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
   { href: "#Home", label: "Home" },
-  { href: "#About", label: "About" },
-  { href: "#Portofolio", label: "Portofolio" },
-  { href: "#contact", label: "Contact" },
+  { href: "#Game", label: "Game" },
+  { href: "#Portofolio", label: "Shop" },
+  { href: "#contact", label: "profile" },
 ];
 
 const Navbar = () => {
@@ -109,7 +109,7 @@ const Navbar = () => {
               onClick={(e) => navigateAndScroll(e, "#Home")}
               className="text-2xl font-extrabold text-orange-500 tracking-wide"
             >
-              Nama kamu
+              Game store
             </Link>
           </div>
 

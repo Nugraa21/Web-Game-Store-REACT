@@ -1,5 +1,5 @@
 import React, { useEffect, memo, useMemo, useState } from "react";
-const AboutPage = () => {
+const GamePage = () => {
   return (
     <>
     <section 
@@ -11,4 +11,4 @@ const AboutPage = () => {
   );
 };
 
-export default memo(AboutPage);
+export default memo(GamePage);
