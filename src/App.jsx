@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import React from 'react'
+import "./index.css"
 
-
-const LandingPage = ({ showWelcome, setShowWelcome }) => {
+const App = () => {
   return (
     <div>App</div>
   )
