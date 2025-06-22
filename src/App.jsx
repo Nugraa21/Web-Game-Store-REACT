@@ -1,10 +1,19 @@
-import React from 'react'
-import "./index.css"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import AuthPage from './pages/AuthPage.jsx';
+import Home from './pages/Home.jsx';
+import { AuthProvider } from './context/AuthContext.jsx';
 
-const App = () => {
+function App() {
   return (
-    <div>App</div>
-  )
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<AuthPage />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
+  );
 }
 
-export default App
+export default App;

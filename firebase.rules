@@ -1,0 +1,23 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Users collection: Allow creating a new user document
+    match /users/{userId} {
+      // Allow anyone to create a new user document
+      allow create: if true;
+      // Allow read and update only if the userId matches the email in the document
+      allow read, update: if resource.data.email == userId;
+    }
+    // Chats collection: Restrict to participants
+    match /chats/{chatId} {
+      allow read, write: if resource.data.participants != null && 
+                           (request.resource.data.participants[0] == resource.data.email || 
+                            request.resource.data.participants[1] == resource.data.email);
+    }
+    // Friend requests: Restrict to sender/receiver
+    match /friendRequests/{requestId} {
+      allow read, write: if resource.data.senderId == request.resource.data.email || 
+                           resource.data.receiverId == request.resource.data.email;
+    }
+  }
+}
